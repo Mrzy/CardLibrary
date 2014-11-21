@@ -152,6 +152,7 @@ public class SwipeDismissListViewTouchListener implements View.OnTouchListener {
         mListView = listView;
         mCallbacks = callbacks;
         swipeDistanceDivisor =  listView.getContext().getResources().getInteger(R.integer.list_card_swipe_distance_divisor);
+        swipeDistanceDivisor = 3;
     }
 
     /**
