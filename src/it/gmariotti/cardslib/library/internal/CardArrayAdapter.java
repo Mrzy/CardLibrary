@@ -112,6 +112,7 @@ public class CardArrayAdapter extends BaseCardArrayAdapter implements UndoBarCon
      */
     protected Dismissable mDismissable;
 
+    protected LayoutInflater mInflater;
     // -------------------------------------------------------------
     // Constructors
     // -------------------------------------------------------------
@@ -124,6 +125,7 @@ public class CardArrayAdapter extends BaseCardArrayAdapter implements UndoBarCon
      */
     public CardArrayAdapter(Context context, List<Card> cards) {
         super(context, cards);
+        mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     // -------------------------------------------------------------
@@ -136,8 +138,6 @@ public class CardArrayAdapter extends BaseCardArrayAdapter implements UndoBarCon
         View view = convertView;
         CardView mCardView;
         Card mCard;
-
-        LayoutInflater mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         //Retrieve card from items
         mCard = (Card) getItem(position);
